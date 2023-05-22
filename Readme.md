@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Dmitry Amosov](https://up.htmlacademy.ru/htmlcss/37/user/2372605).
-* Наставник: `Неизвестно`.
+* Наставник: `Малик Киров`(https://htmlacademy.ru/profile/id17217).
 
 ---
 
