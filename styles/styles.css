@@ -22,9 +22,25 @@ body {
   background-color: #ffffff;
 }
 
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #756157;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 
 .page-header {
-  color: #000000;
+
+}
+
+.navigation-user-link {
+
 }
 
 .navigation-link {
@@ -65,6 +81,10 @@ body {
   text-align: center;
 }
 
+.advantages-wrapper {
+  background-color: #82B3D3;
+}
+
 .advantages-title {
   font-size: 24px;
   line-height: 28px;
@@ -76,10 +96,6 @@ body {
 .advantages-title-white,
 .advantages-description-white {
   color: #ffffff;
-}
-
-.advantages-wrapper {
-  background-color: #82B3D3;
 }
 
 .suggestions-list {
@@ -113,4 +129,11 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #ffffff;
+}
+
+.contacts-phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: #000000;
+  text-decoration: none;
 }
