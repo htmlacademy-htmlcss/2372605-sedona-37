@@ -126,11 +126,6 @@ body {
   background-color: #82B3D3;
 }
 
-.advantages-title-white,
-.advantages-description-white {
-  color: #ffffff;
-}
-
 .advantages-item-light-gray {
   background-color: rgba(131, 179, 211, 0.12);
 }
@@ -145,6 +140,11 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+}
+
+.advantages-title-white,
+.advantages-description-white {
+  color: #ffffff;
 }
 
 .suggestions-list {
