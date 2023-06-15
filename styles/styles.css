@@ -14,7 +14,15 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -38,9 +46,13 @@ body {
 }
 
 .button-mailing {
+  color: #ffffff;
   font-size: 20px;
   line-height: 36px;
+  font-weight: 700;
+  font-family: "PT Sans";
   background-color: #82B3D3;
+  text-transform: uppercase;
 }
 
 .button-submit {
@@ -67,6 +79,11 @@ body {
   background-color: #7DB54F;
 }
 
+.email-field {
+  background-color: #F2F2F2;
+  font-family: "PT Sans";
+}
+
 /* index */
 
 /* header */
@@ -75,8 +92,21 @@ body {
 
 }
 
-.navigation-user-link {
+.navigation {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
 
+.navigation-list {
+  width: 600px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-user {
+  max-width: 300px;
+  margin-left: auto;
 }
 
 .navigation-link {
@@ -86,6 +116,10 @@ body {
   text-align: center;
   color: #000000;
   text-decoration: none;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 /* hero */
@@ -98,6 +132,16 @@ body {
 }
 
 /* main */
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-logo {
+  display: block;
+  margin: 0 auto;
+}
 
 .modules-titles {
   text-align: center;
@@ -119,7 +163,14 @@ body {
 }
 
 .advantages-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.advantages-item {
+  width: 400px;
 }
 
 .advantages-wrapper {
@@ -148,7 +199,14 @@ body {
 }
 
 .suggestions-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.suggestions-item {
+  width: 400px;
 }
 
 .suggestions-item-light-gray {
@@ -187,10 +245,6 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #ffffff;
-}
-
-.email-field {
-  background-color: #F2F2F2;
 }
 
 /* catalog */
@@ -237,6 +291,12 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+}
+
+.select-control {
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .hotel-card-link {
