@@ -14,12 +14,17 @@
   font-display: swap;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
 }
 
 body {
-  margin: 0;
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -92,6 +97,11 @@ body {
 
 }
 
+.logo {
+  width: 140px;
+  margin-right: 44px;
+}
+
 .navigation {
   display: flex;
   width: 1200px;
@@ -133,11 +143,6 @@ body {
 
 /* main */
 
-.page-container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
 .welcome-logo {
   display: block;
   margin: 0 auto;
@@ -164,13 +169,25 @@ body {
 
 .advantages-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
 .advantages-item {
-  width: 400px;
+  width: 33.33%;
+}
+
+.advantages-item-with-image {
+  width: 100%;
+  display: flex;
+}
+
+.advantages-item-with-image-reverse {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .advantages-wrapper {
@@ -206,7 +223,7 @@ body {
 }
 
 .suggestions-item {
-  width: 400px;
+  width: 33.33%;
 }
 
 .suggestions-item-light-gray {
@@ -252,7 +269,7 @@ body {
 .inner-wrapper {
   background-color: #7496b9;
   background-image: url("../images/main/catalog-background-blur.jpg");
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -269,6 +286,14 @@ body {
 .breadcrumbs-link {
   color: inherit;
   text-decoration: none;
+}
+
+.hotels-filter {
+  display: flex;
+}
+
+.hotel-search-results {
+  display: flex;
 }
 
 .catalog-filter-title {
@@ -327,6 +352,11 @@ body {
   color: #000000;
 }
 
+.inner-mailing {
+  text-align: center;
+}
+
+
 .inner-mailing-title {
   font-size: 30px;
   line-height: 36px;
@@ -343,6 +373,19 @@ body {
 
 /* footer */
 
+.page-footer {
+  display: flex;
+}
+
+.footer-social {
+  width: 160px;
+  margin-right: 249px;
+}
+
+.footer-social-item {
+
+}
+
 .social-apps-button {
 
 }
@@ -355,5 +398,6 @@ body {
 }
 
 .html-academy-logo {
-
+  width: 115px;
+  margin-left: auto;
 }
