@@ -30,16 +30,16 @@
             </a>
           </li>
         </ul>
-        <ul class="navigation-user">
-          <li class="navigation-user-item">
-            <a href="#" class="navigation-user-link">
+        <ul class="navigation-list navigation-user">
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">
               <span class="visually-hidden">
                 Поиск
               </span>
             </a>
           </li>
-          <li class="navigation-user-item">
-            <a href="#" class="navigation-user-link">
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">
               <span class="visually-hidden">
                 Избранное
               </span>
@@ -48,13 +48,15 @@
               </span>
             </a>
           </li>
+          <li class="navigation-item">
+            <a href="#" class="button button-want-here">
+              Хочу сюда!
+            </a>
+          </li>
         </ul>
       </nav>
-      <a href="#" class="button button-want-here">
-        Хочу сюда!
-      </a>
     </header>
-    <main class="main-index">
+    <main class="main-container main-index ">
       <section class="hero">
         <h1 class="visually-hidden">
           City of Sedona
@@ -74,7 +76,7 @@
           Преимущества
         </h2>
         <ul class="advantages-list">
-          <li class="advantages-item">
+          <li class="advantages-item advantages-item-with-image">
             <div class="advantages-wrapper">
               <h3 class="advantages-title advantages-title-white">
                 Настоящий городок
@@ -109,7 +111,7 @@
               Большинство едет в Гранд Каньон и толпится там
             </p>
           </li>
-          <li class="advantages-item">
+          <li class="advantages-item advantages-item-with-image-reverse">
             <div class="advantages-wrapper">
               <h3 class="advantages-title advantages-title-white">
                 Там есть мост дьявола
@@ -178,7 +180,7 @@
         </p>
         <form class="mailing-form" action="https://echo.htmlacademy.ru/" method="post">
           <label class="visually-hidden" for="user-email">
-            E-mail
+            e-mail
           </label>
           <input class="email-field" type="email" name="user-email" id="user-email" placeholder="Ваш e-mail">
           <button class="button-mailing" type="submit">

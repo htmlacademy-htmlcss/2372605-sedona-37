@@ -14,12 +14,36 @@
   font-display: swap;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
   background-color: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .button {
@@ -38,9 +62,13 @@ body {
 }
 
 .button-mailing {
+  color: #ffffff;
   font-size: 20px;
   line-height: 36px;
+  font-weight: 700;
+  font-family: "PT Sans";
   background-color: #82B3D3;
+  text-transform: uppercase;
 }
 
 .button-submit {
@@ -67,6 +95,11 @@ body {
   background-color: #7DB54F;
 }
 
+.email-field {
+  background-color: #F2F2F2;
+  font-family: "PT Sans";
+}
+
 /* index */
 
 /* header */
@@ -75,17 +108,49 @@ body {
 
 }
 
-.navigation-user-link {
+.logo {
+  width: 140px;
+  margin-right: 44px;
+}
 
+.navigation {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navigation-user {
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.navigation-user .navigation-user-link {
+  min-width: 44px;
+  min-height: 64px;
 }
 
 .navigation-link {
+  display: block;
+  padding: 20px 16px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   text-align: center;
   color: #000000;
   text-decoration: none;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 /* hero */
@@ -98,6 +163,11 @@ body {
 }
 
 /* main */
+
+.welcome-logo {
+  display: block;
+  margin: 0 auto;
+}
 
 .modules-titles {
   text-align: center;
@@ -119,7 +189,26 @@ body {
 }
 
 .advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.advantages-item {
+  width: 33.33%;
+}
+
+.advantages-item-with-image {
+  width: 100%;
+  display: flex;
+}
+
+.advantages-item-with-image-reverse {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .advantages-wrapper {
@@ -148,7 +237,14 @@ body {
 }
 
 .suggestions-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.suggestions-item {
+  width: 33.33%;
 }
 
 .suggestions-item-light-gray {
@@ -189,16 +285,12 @@ body {
   color: #ffffff;
 }
 
-.email-field {
-  background-color: #F2F2F2;
-}
-
 /* catalog */
 
 .inner-wrapper {
   background-color: #7496b9;
   background-image: url("../images/main/catalog-background-blur.jpg");
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -215,6 +307,14 @@ body {
 .breadcrumbs-link {
   color: inherit;
   text-decoration: none;
+}
+
+.hotels-filter {
+  display: flex;
+}
+
+.hotel-search-results {
+  display: flex;
 }
 
 .catalog-filter-title {
@@ -237,6 +337,12 @@ body {
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
+}
+
+.select-control {
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .hotel-card-link {
@@ -267,6 +373,11 @@ body {
   color: #000000;
 }
 
+.inner-mailing {
+  text-align: center;
+}
+
+
 .inner-mailing-title {
   font-size: 30px;
   line-height: 36px;
@@ -283,6 +394,19 @@ body {
 
 /* footer */
 
+.page-footer {
+  display: flex;
+}
+
+.footer-social {
+  width: 160px;
+  margin-right: 249px;
+}
+
+.footer-social-item {
+
+}
+
 .social-apps-button {
 
 }
@@ -295,5 +419,6 @@ body {
 }
 
 .html-academy-logo {
-
+  width: 115px;
+  margin-left: auto;
 }
