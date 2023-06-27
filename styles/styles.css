@@ -62,6 +62,22 @@ input, button, select, textarea {
 }
 
 .button-want-here {
+  display: block;
+  width: 160px;
+  margin: 0 auto;
+  padding: 8px 34px;
+  border-radius: 4px;
+  background-color: #756157;
+}
+
+.button-search-hotel {
+  display: table;
+  margin: 0 auto;
+  width: 376px;
+  font-size: 20px;
+  line-height: 36px;
+  padding: 8px 50px;
+  border-radius: 4px;
   background-color: #756157;
 }
 
@@ -108,14 +124,18 @@ input, button, select, textarea {
 
 /* header */
 
+.page-header {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
 .logo {
   width: 140px;
-  margin-right: 44px;
+  margin-right: 30px;
 }
 
 .navigation {
   display: flex;
-  width: 1200px;
   margin: 0 auto;
 }
 
@@ -126,11 +146,6 @@ input, button, select, textarea {
   padding: 0;
   list-style-type: none;
   align-items: center;
-}
-
-.navigation-user {
-  max-width: 300px;
-  margin-left: auto;
 }
 
 .navigation-link {
@@ -144,13 +159,20 @@ input, button, select, textarea {
   text-decoration: none;
 }
 
-.navigation-user-link {
-  padding: 24px 14px;
+.navigation-user {
+  max-width: 300px;
+  margin-left: auto;
 }
 
-.navigation-user .navigation-user-link {
+.navigation-user-link {
+  display: block;
+  padding: 22px 12px;
   min-width: 44px;
   min-height: 64px;
+}
+
+.navigation-user-item-button {
+  margin-left: 20px;
 }
 
 .main-container {
@@ -341,11 +363,42 @@ input, button, select, textarea {
   margin-bottom: 40px;
 }
 
+/* .sorting-catalog {
+  display: flex;
+  gap: 8px;
+}
+
 .hotel-search-results .button {
+  display: block;
   width: 48px;
   height: 48px;
-  margin-right: 8px;
   border: 2px solid #E5E5E5;
+} */
+
+.sorting-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 70px;
+  padding: 0;
+  gap: 8px;
+  list-style-type: none;
+}
+
+.sorting-item{
+  width: 48px;
+  height: 48px;
+  border: 2px solid #E5E5E5;
+}
+
+.button-view {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-item {
+  border-color: #000000;
 }
 
 .catalog-filter-title {
@@ -369,6 +422,7 @@ input, button, select, textarea {
 }
 
 .found-hotels {
+  margin-right: auto;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -377,11 +431,13 @@ input, button, select, textarea {
 }
 
 .select-control {
+  width: 292px;
   font-size: 18px;
   line-height: 21px;
 }
 
 .hotel-card-link {
+  color: #000000;
   text-decoration: none;
 }
 
@@ -464,7 +520,10 @@ input, button, select, textarea {
 }
 
 .social-apps-button {
-
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .contacts-phone {
