@@ -150,23 +150,43 @@
           <option value="expensive">Сначала дорогие</option>
           <option value="popular">Сначала популярные</option>
         </select>
+
+        <!-- Отображение списков результата поиска -->
+
+        <!-- <div class="sorting-catalog">
+          <a href="#" class="button sorting-button-active">
+            <span class="visually-hidden">
+              Показать карточки
+            </span>
+          </a>
+          <a href="#" class="button sorting-button">
+            <span class="visually-hidden">
+              Показать ленту
+            </span>
+          </a>
+          <a href="#" class="button sorting-button">
+            <span class="visually-hidden">
+              Показать список
+            </span>
+          </a>
+        </div> -->
         <ul class="sorting-list">
-          <li class="sorting-item">
-            <a href="#" class="button button-sorting-black">
+          <li class="sorting-item active-item">
+            <a href="#" class="button button-view">
               <span class="visually-hidden">
                 Показать карточки
               </span>
             </a>
           </li>
           <li class="sorting-item">
-            <a href="#" class="button button-sorting-black">
+            <a href="#" class="button button-view">
               <span class="visually-hidden">
                 Показать ленту
               </span>
             </a>
           </li>
           <li class="sorting-item">
-            <a href="#" class="button button-sorting-black">
+            <a href="#" class="button button-view">
               <span class="visually-hidden">
                 Показать список
               </span>
@@ -174,15 +194,20 @@
           </li>
         </ul>
       </section>
+
+      <!-- Карточки отоелей -->
+
       <section class="">
         <ul class="hotel-list">
           <li class="hotel-card">
-            <a href="" class="hotel-card-link">
+            <a href="#" class="">
               <img src="images/main/hotel-1.jpg" width="300" height="212" class="hotel-card-image" alt="Фотография отеля">
-              <h3 class="hotel-card-title">
-                Amara Resort & Spa
-              </h3>
             </a>
+            <h3 class="hotel-card-title">
+              <a href="#" class="hotel-card-link">
+                Amara Resort & Spa
+              </a>
+            </h3>
             <p class="hotel">
               Гостиница
             </p>
@@ -206,12 +231,14 @@
             </p>
           </li>
           <li class="hotel-card">
-            <a href="" class="hotel-card-link">
+            <a href="">
               <img src="images/main/hotel-2.jpg" width="300" height="212" class="hotel-card-image" alt="">
-              <h3 class="hotel-card-title">
-                Villas at Poco Diablo
-              </h3>
             </a>
+            <h3 class="hotel-card-title">
+              <a href="" class="hotel-card-link">
+                Villas at Poco Diablo
+              </a>
+            </h3>
             <p class="hotel">
               Гостиница
             </p>
@@ -235,12 +262,14 @@
             </p>
           </li>
           <li class="hotel-card">
-            <a href="" class="hotel-card-link">
+            <a href="">
               <img src="images/main/hotel-3.jpg" width="300" height="212" class="hotel-card-image" alt="">
-              <h3 class="hotel-card-title">
-                Desert Quail Inn
-              </h3>
             </a>
+            <h3 class="hotel-card-title">
+              <a href="" class="hotel-card-link">
+                Desert Quail Inn
+              </a>
+            </h3>
             <p class="hotel">
               Гостиница
             </p>
@@ -264,12 +293,14 @@
             </p>
           </li>
           <li class="hotel-card">
-            <a href="" class="hotel-card-link">
+            <a href="">
               <img src="images/main/hotel-4.jpg" width="300" height="212" class="hotel-card-image" alt="">
-              <h3 class="hotel-card-title">
-                GreenTree Inn
-              </h3>
             </a>
+            <h3 class="hotel-card-title">
+              <a href="" class="hotel-card-link">
+                GreenTree Inn
+              </a>
+            </h3>
             <p class="hotel">
               Гостиница
             </p>
@@ -294,7 +325,7 @@
           </li>
         </ul>
       </section>
-      <section class="pagination">
+      <section class="pagination-container">
         <ul class="pagination-list">
           <li class="pagination-item">
             <a class="pagination-link pagination-current">
@@ -346,22 +377,22 @@
     </main>
     <footer class="page-footer">
       <section class="footer-social">
-        <ul class="footer-social-item">
-          <li class="footer-social-list">
+        <ul class="footer-social-list">
+          <li class="footer-social-item">
             <a class="social-apps-button" href="#">
               <span class="visually-hidden">
                 Вконтакте
               </span>
             </a>
           </li>
-          <li class="footer-social-list">
+          <li class="footer-social-item">
             <a class="social-apps-button" href="#">
               <span class="visually-hidden">
                 Telegram
               </span>
             </a>
           </li>
-          <li class="footer-social-list">
+          <li class="footer-social-item">
             <a class="social-apps-button" href="#">
               <span class="visually-hidden">
                 YouTube
