@@ -388,6 +388,7 @@ input, button, select, textarea {
   width: 48px;
   height: 48px;
   border: 2px solid #E5E5E5;
+  border-radius: 4px;
 }
 
 .button-view {
@@ -442,6 +443,9 @@ input, button, select, textarea {
   width: 292px;
   font-size: 18px;
   line-height: 21px;
+  padding: 14px 20px;
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
 }
 
 .hotel-card {
@@ -460,11 +464,11 @@ input, button, select, textarea {
 .hotel-price {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .hotel-card-price {
   margin: 0;
-  margin-bottom: 16px;
 }
 
 .hotel-card-title {
@@ -486,6 +490,7 @@ input, button, select, textarea {
 .rating-info {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .hotel-rating {
@@ -499,6 +504,76 @@ input, button, select, textarea {
   width: 140px;
   padding: 8px 22px;
   border-radius: 4px;
+}
+
+/* TEST */
+
+.hotel-card-test {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  gap: 16px 20px;
+  padding: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+}
+
+.hotel-card-image-test {
+  grid-column: 2 span;
+}
+
+.hotel-card-title-test {
+  grid-column: 2 span;
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.hotel-card-link-test {
+  margin: 0;
+  color: #000000;
+  text-decoration: none;
+}
+
+.hotel-card-type-test {
+  margin: 0;
+}
+
+.hotel-card-price-test {
+  margin: 0;
+  text-align: right;
+}
+
+.button-hotel-more-info-test {
+  padding: 8px 20px;
+  background-color: #756157;
+  border-radius: 4px;
+}
+
+.button-hotel-favorite-test {
+  padding: 8px  20px;
+  background-color: #82B3D3;
+  border-radius: 4px;
+}
+
+.hotel-rating-test {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+  background-color: #f2f2f2;
+  padding: 8px 22px;
+  border-radius: 4px;
+}
+
+/* TEST END */
+
+.pagination-container {
+  padding: 0 70px;
+  margin-bottom: 60px;
 }
 
 .pagination-list {
@@ -518,9 +593,17 @@ input, button, select, textarea {
   height: 60px;
   color: #ffffff;
   background-color: #82B3D3;
+  text-align: center;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
+  font-weight: 700;
   line-height: 36px;
+  border-radius: 4px;
+}
+
+.pagination-number-skip {
+  width: 60px;
+  height: 60px;
 }
 
 .pagination-current {
