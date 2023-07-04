@@ -514,8 +514,20 @@ input, button, select, textarea {
   justify-content: center;
 }
 
-.active-item {
+.active-item-current {
   border-color: #000000;
+}
+
+.active-item:hover {
+  border-color: #000000;
+}
+
+.active-item:active {
+
+}
+
+.active-item:focus {
+
 }
 
 .catalog-filter-title {
