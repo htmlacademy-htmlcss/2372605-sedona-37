@@ -500,11 +500,29 @@ input, button, select, textarea {
   list-style-type: none;
 }
 
-.sorting-item{
+.sorting-item {
   width: 48px;
   height: 48px;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
+}
+
+.sorting-item-current {
+  border-color: #000000;
+}
+
+.sorting-item:hover {
+  border-color: #000000;
+}
+
+.sorting-item:focus,
+.sorting-item:focus-visible {
+  border-color: #68A2CA;
+  outline: none;
+}
+
+.sorting-item:active {
+  border-color: #000000;
 }
 
 .card-grid-toggle {
@@ -512,22 +530,6 @@ input, button, select, textarea {
   height: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.active-item-current {
-  border-color: #000000;
-}
-
-.active-item:hover {
-  border-color: #000000;
-}
-
-.active-item:active {
-
-}
-
-.active-item:focus {
-
 }
 
 .catalog-filter-title {
