@@ -129,10 +129,30 @@
                   </li>
                 </ul>
               </fieldset>
-              <fieldset>
+              <fieldset class="catalog-filter-group">
                 <legend class="catalog-filter-title">
                   Стоимость, ₽:
                 </legend>
+                <div class="range-wrapper-inputs">
+                  <label class="catalog-filter-label">
+                    <input class="range-input range-input-min" type="number" value="0" name="min-price">
+                  </label>
+                  <label class="catalog-filter-label">
+                    <input class="range-input range-input-max" type="number" value="9000" name="max-price">
+                  </label>
+                </div>
+                <div class="range">
+                  <div class="range-scale">
+                    <div class="range-bar" style="left: 0; width: 226px">
+                      <button class="range-toggle toggle-min">
+                        <span class="visually-hidden">Изменить минимальную цену.</span>
+                      </button>
+                      <button class="range-toggle toggle-max">
+                        <span class="visually-hidden">Изменить максимальную цену.</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
               <div class="catalog-filter-button">
                 <button class="button button-submit" type="submit">Применить</button>
@@ -141,6 +161,9 @@
             </form>
           </section>
         </div>
+
+        <!-- Раздел поиска и фильтрации списка карточек. -->
+
         <section class="hotel-search-results">
           <h2 class="found-hotels">
             Найдено гостиниц:
