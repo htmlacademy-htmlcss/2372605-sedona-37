@@ -20,6 +20,7 @@
 
 html {
   height: 100%;
+  min-width: 1280px;
 }
 
 body {
@@ -108,7 +109,7 @@ input, button, select, textarea {
 
 .button-mailing {
   padding: 8px 50px;
-  height: 52px;
+  min-height: 52px;
   font-size: 20px;
   background-color: #82B3D3;
   border: none;
@@ -148,9 +149,8 @@ input, button, select, textarea {
 }
 
 .button-reset:focus-visible {
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
   border-radius: 4px;
-  outline: none;
 }
 
 .button-reset:active {
@@ -223,6 +223,7 @@ input, button, select, textarea {
   display: block;
   width: 140px;
   transition: 0.7s;
+  margin-bottom: -6px;
 }
 
 .logo:hover {
@@ -232,7 +233,7 @@ input, button, select, textarea {
 .navigation {
   position: relative;
   display: flex;
-  height: 64px;
+  min-height: 64px;
   margin: 0 auto;
   z-index: 1;
 }
@@ -244,6 +245,7 @@ input, button, select, textarea {
   padding: 0;
   list-style-type: none;
   align-items: center;
+  max-width: 600px;
 }
 
 .navigation-item {
@@ -416,12 +418,12 @@ input, button, select, textarea {
 }
 
 .advantages-item-light-gray {
-  padding: 112px 85px;
+  padding: 113px 85px 112px;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantages-item-gray {
-  padding: 112px 85px;
+  padding: 113px 85px 112px;
   background-color: rgba(131, 179, 211, 0.2);
 }
 
@@ -497,6 +499,7 @@ input, button, select, textarea {
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   list-style-type: none;
+  align-items: flex-start;
 }
 
 .suggestions-item {
@@ -644,7 +647,7 @@ input, button, select, textarea {
 }
 
 .breadcrumbs-link {
-  margin-right: 29px;
+  margin-right: 28px;
   font-size: 16px;
   line-height: 21px;
   color: #ffffff;
@@ -712,11 +715,16 @@ input, button, select, textarea {
 
 /* Меню сортировки и предложений для гостиниц (Инфраструктура)*/
 
+.control {
+  line-height: 23px;
+}
+
 .control-label-square {
   position: relative;
   display: block;
   padding-left: 36px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .control-label-square::before {
@@ -754,6 +762,7 @@ input, button, select, textarea {
   display: block;
   padding-left: 36px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .control-label-circle::before {
@@ -819,14 +828,14 @@ input, button, select, textarea {
 
 .range-from {
   position: absolute;
-  width: 17px;
+  width: 18px;
   height: 24px;
   ;
 }
 
 .range-to {
   position: absolute;
-  width: 20px;
+  width: 18px;
   height: 24px;
 }
 
@@ -891,7 +900,7 @@ input, button, select, textarea {
 
 .toggle-max {
   top: -8px;
-  right: -10px;
+  right: 0;
 }
 
 /* Контейнер кнопок блока фильтров услуг */
@@ -955,6 +964,7 @@ input, button, select, textarea {
 
 .select-control:focus-visible {
   border: 2px solid #68A2CA;
+  outline: none;
 }
 
 .select-control:disabled {
@@ -970,6 +980,7 @@ input, button, select, textarea {
   margin: 0 0 0 70px;
   padding: 0;
   gap: 8px;
+  max-width: 160px;
   list-style-type: none;
 }
 
@@ -1029,6 +1040,7 @@ input, button, select, textarea {
 .hotel-card {
   display: grid;
   grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 212px 1fr;
   gap: 16px 20px;
   padding: 20px;
   border: 1px solid #E6E6E6;
@@ -1109,6 +1121,8 @@ input, button, select, textarea {
 
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
   padding: 40px 0 0;
   border-top: 1px solid #E6E6E6;
@@ -1116,10 +1130,6 @@ input, button, select, textarea {
 }
 
 /* Элементы списка пагинации */
-
-.pagination-item {
-  margin-right: 8px;
-}
 
 .pagination-link {
   display: flex;
@@ -1208,7 +1218,7 @@ input, button, select, textarea {
 
 .page-footer {
   display: flex;
-  padding: 40px 70px 30px;
+  padding: 45px 70px 35px;
   justify-content: space-between;
   align-items: center;
 }
@@ -1220,6 +1230,7 @@ input, button, select, textarea {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  max-width: 150px;
   list-style-type: none;
 }
 
@@ -1299,7 +1310,8 @@ input, button, select, textarea {
   opacity: .3;
 }
 
-/* Контейнер модального окна */
+
+/* Модальное окно */
 
 .modal-container {
   position: fixed;
@@ -1311,48 +1323,38 @@ input, button, select, textarea {
   background-color: #F2F2F2CC;
 }
 
-/* .modal-container-close {
-  display: none;
-} */
-
 .modal {
   position: relative;
   margin: auto;
   padding: 64px 70px;
-  background-color: #FFFFFF;
-  box-shadow: 0 25px 50px #00000026;
   border-radius: 30px;
+  background-color: #ffffff;
 }
 
 .modal-booking {
-  width: 577px;
+  width: 717px;
 }
 
 .modal-close-button {
   position: absolute;
-  top: 64px;
-  right: 52px;
+  padding: 0;
+  top: 0;
+  right: 0;
   width: 52px;
   height: 52px;
+  background-color: #F2F2F2;
   border: none;
   border-radius: 100%;
-  background-color: #F2F2F2;
   background-image: url("../images/action-icons/close-icon.svg");
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
 }
 
-.modal-content {
-  display: grid;
-  grid-template-columns:
-}
-
 .modal-title {
-  display: flex;
-  grid-column: 1 / -1;
   margin: 0;
   margin-bottom: 64px;
+  padding: 0;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -1360,77 +1362,113 @@ input, button, select, textarea {
   text-transform: uppercase;
 }
 
-/* Форма модального окна */
-
-.bookink-form {
-
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px 88px;
 }
 
 .field-group {
+  display: flex;
   margin: 0;
   padding: 0;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: capitalize;
+  grid-column: 1 / -1;
 }
 
-/* Общий класс для input (модальное окно) */
+.check-in-date,
+.check-out-date {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
 
-.field {
+.adults-wrapper,
+.children-wrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.adults-wrapper {
+  grid-column: 1 / 2;
+}
+
+.children-wrapper {
+  grid-column: 2 / 3;
+}
+
+.adulst-counter,
+.children-counter {
+  margin: 0;
+  padding: 14px 10px;
+  width: 31px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  background-color: #F2F2F2;
+}
+
+.adulst-counter::-webkit-outer-spin-button,
+.adulst-counter::-webkit-inner-spin-button,
+.children-counter::-webkit-outer-spin-button,
+.children-counter::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.button-minus,
+.button-plus {
+  margin: 0;
+  padding: 14px 10px;
+  width: 40px;
+  border: none;
+  background-color: #F2F2F2;
+}
+
+.button-pointer {
+  cursor: pointer;
+}
+
+.button-minus {
+  border-radius: 4px 0 0 4px;
+}
+
+.button-plus {
+  border-radius: 0 4px 4px 0;
+}
+
+.check-in-date,
+.check-out-date {
+  margin: 0;
+  padding: 12px 20px;
+  width: 440px;
   border: none;
   border-radius: 4px;
   background-color: #F2F2F2;
 }
 
-/* Лейбл "дата заезда" и "дата выезда" */
-
-.check-in-date,
-.check-out-date {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-  text-transform: capitalize;
-  color: #000000;
-}
-
-/* Поле с датой заезда и поле с датой выезда */
-
-.check-in-field,
-.check-out-field {
-  width: 440px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-  color: #000000;
-  padding: 12px 20px;
-}
-
-.adults,
-.children {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-  color: #000000;
-}
-
-.adults-amount-field,
-.children-amount-field {
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 700;
-  color: #000000;
-}
-
-.children-amount-field::-webkit-outer-spin-button,
-.children-amount-field::-webkit-inner-spin-button,
-.adults-amount-field::-webkit-outer-spin-button,
-.adults-amount-field::-webkit-inner-spin-button {
-  appearance: none;
+.modal-button-search {
+  display: block;
   margin: 0;
-}
-
-.modal-search-button {
+  margin-top: 25px;
   padding: 18px 256px;
-  font-size: 20px;
-  line-height: 24px;
-  border: none;
+  width: 577px;
   border-radius: 10px;
   background-color: #83B3D3;
+  grid-column: 1 / -1;
 }
