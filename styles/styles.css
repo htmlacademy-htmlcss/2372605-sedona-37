@@ -20,6 +20,7 @@
 
 html {
   height: 100%;
+  min-width: 1280px;
 }
 
 body {
@@ -85,14 +86,6 @@ input, button, select, textarea {
   background-color: #756157;
 }
 
-.button-hotel-more-info {
-  width: 140px;
-  height: 36px;
-  padding: 8px 20px;
-  border-radius: 4px;
-  background-color: #756157;
-}
-
 .button-want-here:hover,
 .button-search-hotel:hover,
 .button-hotel-more-info:hover {
@@ -116,29 +109,15 @@ input, button, select, textarea {
 
 .button-mailing {
   padding: 8px 50px;
-  height: 52px;
+  min-height: 52px;
   font-size: 20px;
-  line-height: 36px;
-  font-weight: 700;
-  font-family: "PT Sans";
-  color: #ffffff;
   background-color: #82B3D3;
-  text-transform: uppercase;
   border: none;
   border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
-
-.button-submit {
-  margin-bottom: 32px;
-  padding: 8px 50px;
-  border-radius: 4px;
-  background-color: #82B3D3;
 }
 
 .button-hotel-favorite {
   width: 140px;
-  height: 36px;
   padding: 8px 20px;
   border-radius: 4px;
   background-color: #82B3D3;
@@ -146,38 +125,35 @@ input, button, select, textarea {
 
 .button-mailing:hover,
 .button-submit:hover,
-.button-hotel-favorite:hover {
+.button-hotel-favorite:hover,
+.modal-button-search:hover {
   background-color: #68A2CA;
 }
 
 .button-mailing:focus,
 .button-submit:focus,
-.button-hotel-favorite:focus {
+.button-hotel-favorite:focus,
+.modal-button-search:focus {
   background-color: #68A2CA;
 }
 
 .button-mailing:active,
 .button-submit:active,
-.button-hotel-favorite:active {
+.button-hotel-favorite:active,
+.modal-button-search:active {
   color: rgba(255, 255, 255, .3);
   background-color: #82B3D3;
 }
 
 /* Все кнопки без фона */
 
-.button-reset {
-  padding: 8px 50px;
-  background-color: transparent;
-}
-
 .button-reset:hover {
   opacity: .6;
 }
 
 .button-reset:focus-visible {
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
   border-radius: 4px;
-  outline: none;
 }
 
 .button-reset:active {
@@ -192,7 +168,6 @@ input, button, select, textarea {
 
 .button-hotel-in-favorite {
   width: 140px;
-  height: 36px;
   padding: 8px 18px;
   border-radius: 4px;
   background-color: #7DB54F;
@@ -229,33 +204,59 @@ input, button, select, textarea {
   font-family: "PT Sans";
 }
 
-/* index */
+.email-field:hover {
+  background-color: #E5E5E5;
+}
 
-/* header */
+.email-field:focus-visible {
+  background-color: #E5E5E5;
+}
+
+.email-field:active {
+  opacity: .6;
+}
+
+/* index */
 
 .page-container {
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
 
+/* header */
+
+/* Навигация (nav) */
+
 .page-header {
-  position: relative;
   padding-left: 70px;
   padding-right: 70px;
 }
 
+.logo-link {
+  margin-right: 28px;
+}
+
 .logo {
-  position: relative;
   display: block;
   width: 140px;
-  margin-right: 30px;
+  transition: 0.7s;
   margin-bottom: -6px;
-  z-index: 1;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo:active {
+  transform: scale(1);
 }
 
 .navigation {
+  position: relative;
   display: flex;
+  min-height: 64px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 .navigation-list {
@@ -265,10 +266,12 @@ input, button, select, textarea {
   padding: 0;
   list-style-type: none;
   align-items: center;
+  max-width: 600px;
 }
 
 .navigation-link {
   display: block;
+  position: relative;
   padding: 20px 16px;
   font-size: 20px;
   line-height: 24px;
@@ -276,6 +279,22 @@ input, button, select, textarea {
   text-align: center;
   color: #000000;
   text-decoration: none;
+  transition: 0.7s;
+}
+
+.navigation-link:hover {
+  transition: 0.7s;
+  background-color: #68A2CA;
+}
+
+.navigation-link-current::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  bottom: -1px;
+  left: 16px;
+  height: 2px;
+  background-color: #756257;
 }
 
 .navigation-user {
@@ -283,18 +302,47 @@ input, button, select, textarea {
   margin-left: auto;
 }
 
-.navigation-user-link {
-  display: block;
+.navigation-user-item {
   padding: 22px 12px;
-  min-width: 44px;
-  min-height: 64px;
+}
+
+.navigation-user-link {
+ position: relative;
+ display: block;
+ width: 20px;
+ height: 20px;
+}
+
+.navigation-user-link:hover svg path {
+  opacity: .6;
+}
+
+.favorite-counter {
+  content: "";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 10px;
+  top: -11px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #7DB54F;
 }
 
 .navigation-user-item-button {
   margin-left: 20px;
 }
 
-/* hero */
+/* main-index */
+
+.main-container {
+  flex-grow: 1;
+}
+
 
 .hero {
   position: relative;
@@ -306,26 +354,21 @@ input, button, select, textarea {
   background-repeat: no-repeat;
 }
 
-.hero::after {
-  content: "";
-  width: 1200px;
-  height: 57px;
-  position: absolute;
-  bottom: 0;
-  background-image: url("../images/main/hero-divider.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* main */
-
-.main-container {
-  flex-grow: 1;
-}
-
 .welcome-logo {
   display: block;
   margin: 0 auto;
+}
+
+.hero::after {
+  content: "";
+  width: 1200px;
+  min-height: 57px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/main/hero-divider.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-module {
@@ -346,12 +389,14 @@ input, button, select, textarea {
 
 .hero-module-subtitle {
   margin: 0;
-  padding-top: 25px;
+  margin-top: 25px;
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
   color: #333333;
 }
+
+/* Блок "преимущества" */
 
 .advantages-list {
   display: grid;
@@ -387,17 +432,18 @@ input, button, select, textarea {
 }
 
 .advantages-item-light-gray {
-  padding: 102px 85px;
+  padding: 113px 85px 112px;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantages-item-gray {
-  padding: 102px 85px;
+  padding: 113px 85px 112px;
   background-color: rgba(131, 179, 211, 0.2);
 }
 
 .advantages-title {
   margin: 0;
+  padding: 0 30px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -408,17 +454,16 @@ input, button, select, textarea {
 .advantages-description {
   position: relative;
   margin: 0;
-  padding: 60px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 .advantages-description::before {
   content: "";
   display: block;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   width: 60px;
   height: 2px;
-  bottom: 30px;
   background-color: rgba(0, 0, 0, .3);
 }
 
@@ -426,10 +471,9 @@ input, button, select, textarea {
   content: "";
   display: block;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   width: 60px;
   height: 2px;
-  bottom: 30px;
   background-color: rgba(255, 255, 255, .3);
 }
 
@@ -455,12 +499,14 @@ input, button, select, textarea {
 
 .advantages-module-subtitle {
   margin: 0;
-  padding-top: 20px;
+  margin-top: 20px;
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
   color: #333333;
 }
+
+/* Блок "предложения" */
 
 .suggestions-list {
   margin: 0;
@@ -469,6 +515,7 @@ input, button, select, textarea {
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   list-style-type: none;
+  align-items: flex-start;
 }
 
 .suggestions-item {
@@ -479,10 +526,6 @@ input, button, select, textarea {
   width: 100%;
   gap: 30px;
   padding: 81px 85px;
-}
-
-.suggestions-image {
-
 }
 
 .suggestions-item-light-gray {
@@ -506,6 +549,8 @@ input, button, select, textarea {
   margin: 0;
 }
 
+/* Блок "Заинтересовались?"  */
+
 .modules-intresting {
   padding: 96px 304px;
   text-align: center;
@@ -523,13 +568,15 @@ input, button, select, textarea {
 .modules-subtitle-intresting {
   margin: 0 auto;
   width: 592px;
-  padding-top: 20px;
+  margin-top: 20px;
   margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
   color: #333333;
 }
+
+/* Блок оформления подписки */
 
 .mailing {
   text-align: center;
@@ -552,7 +599,7 @@ input, button, select, textarea {
 .mailing-subtitle {
   margin: 0 auto;
   width: 475px;
-  padding-top: 20px;
+  margin-top: 20px;
   margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
@@ -567,17 +614,12 @@ input, button, select, textarea {
   font-size: 18px;
   line-height: 24px;
   width: 452px;
-  height: 52px;
   padding: 12px 20px;
   border: none;
   border-radius: 4px 0 0 4px;
 }
 
 /* catalog */
-
-.inner-main {
-
-}
 
 .inner-wrapper {
   background-color: #7496b9;
@@ -595,6 +637,10 @@ input, button, select, textarea {
   color: #ffffff;
 }
 
+/* Блок сортировки и выбора услуг гостиниц */
+
+/* Хлебные крошки */
+
 .breadcrumbs {
   display: flex;
   margin: 0;
@@ -604,21 +650,261 @@ input, button, select, textarea {
   list-style-type: none;
 }
 
+.breadcrumbs-item {
+  position: relative;
+}
+
+.breadcrumbs-item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 8px;
+  height: 20px;
+  background-image: url("../images/action-icons/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .breadcrumbs-link {
-  margin-right: 29px;
-  color: inherit;
+  margin-right: 28px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
   text-decoration: none;
 }
 
+.breadcrumbs-link:hover {
+  color: #FFFFFF99;
+}
+
+.breadcrumbs-link:focus-visible {
+  color: #ffffff;
+}
+
+.breadcrumbs-link:active {
+  color: #FFFFFF4D;
+}
+
+/* Настройка заголовков для fieldset'ов */
+
+.catalog-filter-title {
+  margin: 0;
+  padding: 0;
+  width: 151px;
+  margin-bottom: 32px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+/* Настройки фильтров (radio/checkbox)
+
+Настройка form */
+
 .hotels-filter {
   display: flex;
+  gap: 70px;
 }
+
+/* Настройка fieldset */
 
 .catalog-filter-group {
   margin: 0;
   padding: 0;
   border: none;
 }
+
+.range-filter-group {
+  margin-left: 70px;
+}
+
+/* Настройки списков для инфраструктуры и типа жилья */
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.catalog-filter-item + .catalog-filter-item {
+  margin-top: 16px;
+}
+
+/* Меню сортировки и предложений для гостиниц (Инфраструктура)*/
+
+.control {
+  line-height: 23px;
+}
+
+.control-label-square {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.control-label-square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+/* Эффекты и состояния для checkbox (инфраструктура) */
+
+.control-label-square:hover {
+  opacity: .6;
+}
+
+.control-input-square:checked + .control-label-square::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/action-icons/checkbox-check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.control-input-square:focus-visible + .control-label-square::before {
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.control-label-square:active{
+  opacity: .3;
+}
+
+/* Меню сортировки и предложений для гостиниц (Тип жилья) */
+
+.control-label-circle {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.control-label-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+
+/* Эффекты и состояния для radio (тип жилья) */
+
+.control-label-circle:hover {
+  opacity: .6;
+}
+
+.control-input-circle:checked + .control-label-circle::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #3F5E72;
+  border-radius: 100%;
+}
+
+.control-input-circle:focus-visible + .control-label-circle::before {
+  outline: 3px solid #83B3D3;
+}
+
+.control-label-circle:active{
+  opacity: .3;
+}
+
+
+/* Настройка стоимости (input) */
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+
+.catalog-filter-label {
+  position: relative;
+}
+
+.range-input {
+  width: 143px;
+  height: 48px;
+  padding: 12px 40px 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  background-color: #F2F2F2;
+  border: none;
+}
+
+.range-input:hover {
+  background-color: #E6E6E6;
+}
+
+.range-input:focus-visible {
+  outline: 3px solid #83B3D3;
+  border: none;
+}
+
+.range-input-min {
+  border-radius: 4px 0 0 4px;
+  margin-right: 2px;
+}
+
+.range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
+/* Настройка "от" и "до" блока стоимости */
+
+.range-from {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  ;
+}
+
+.range-to {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+}
+
+.range-from,
+.range-to {
+  top: 12px;
+  right: 20px;
+  text-transform: lowercase;
+  color: rgba(0, 0, 0, .3);
+}
+
+/* Отключение функции выбора стоимости внутренними стрелочками в input */
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Настройка стоимости (range) */
 
 .range-scale {
   position: relative;
@@ -642,62 +928,58 @@ input, button, select, textarea {
   cursor: pointer;
 }
 
-.range-toggle:hover {
+/* Состояния и эффекты слайдера стоимости */
 
+.range-toggle:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
 }
 
 .range-toggle:focus-visible {
   outline: 3px solid #83B3D3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
 }
 
 .range-toggle:active {
   outline: 2px solid #83B3D3;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, .4);
 }
 
 .toggle-min {
   top: -8px;
+  left: 0;
 }
 
 .toggle-max {
   top: -8px;
-  right: -10px;
+  right: 0;
 }
 
-.range-wrapper-inputs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 36px;
-}
-
-.range-input {
-  width: 143px;
-  padding: 12px 20px;
-  font: inherit;
-  font-weight: 700;
-  text-align: center;
-  background-color: #F2F2F2;
-  border: none;
-}
-
-.range-input-min {
-  border-radius: 4px 0 0 4px;
-  margin-right: 2px;
-}
-
-.range-input-max {
-  border-radius: 0 4px 4px 0;
-}
-
-.range-input::-webkit-outer-spin-button,
-.range-input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
-}
+/* Контейнер кнопок блока фильтров услуг */
 
 .catalog-filter-button {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  margin-top: 56px;
 }
+
+/* Кнопки применить/сбросить блока фильтров услуг */
+
+.button-submit {
+  display: block;
+  width: 191px;
+  margin-bottom: 32px;
+  padding: 8px 50px;
+  border-radius: 4px;
+  background-color: #82B3D3;
+}
+
+.button-reset {
+  display: block;
+  width: 191px;
+  padding: 8px 50px;
+  background-color: transparent;
+}
+
+/* Блок с информацией о количестве гостиниц и фильтр их отображения */
 
 .hotel-search-results {
   display: flex;
@@ -707,14 +989,53 @@ input, button, select, textarea {
   padding: 0 70px;
 }
 
+.found-hotels {
+  margin: 0 auto 0 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+/* Блок с выпадающим списком (фильтр цены и популярности) */
+
+.select-control {
+  width: 292px;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 10px 16px;
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
+}
+
+.select-control:hover {
+  border: 2px solid #68A2CA;
+}
+
+.select-control:focus-visible {
+  border: 2px solid #68A2CA;
+  outline: none;
+}
+
+.select-control:disabled {
+  color: #0000004D;
+  border: 2px solid #0000004D;
+}
+
+/* Список кнопок, отвечающих за смену отображения карточек отелей */
+
 .sorting-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 0 70px;
   padding: 0;
   gap: 8px;
+  max-width: 160px;
   list-style-type: none;
 }
+
+/* Кнопки отображения карточек отелей */
 
 .card-grid-toggle {
   display: flex;
@@ -726,6 +1047,7 @@ input, button, select, textarea {
   border-radius: 4px;
 }
 
+/* Состояния и эффекты кнопок в карточках отелей */
 
 .sorting-item-current .card-grid-toggle {
   border-color: #000000;
@@ -744,23 +1066,16 @@ input, button, select, textarea {
   border-color: #000000;
 }
 
-.catalog-filter-list {
-  margin: 0;
-  padding: 0;
-}
+ /* Настройки карточек отелей
 
-.catalog-filter-title {
-  margin-bottom: 32px;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-  color: #ffffff;
-}
+ Общие настройки section  */
 
 .catalog-card-list {
   margin-bottom: 40px;
   padding: 0 70px;
 }
+
+/* Настройки списка отелей */
 
 .hotel-list {
   display: grid;
@@ -771,38 +1086,21 @@ input, button, select, textarea {
   list-style-type: none;
 }
 
-.control-label {
-  font-size: 18px;
-  line-height: 23px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.found-hotels {
-  margin-right: auto;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.select-control {
-  width: 292px;
-  font-size: 18px;
-  line-height: 21px;
-  padding: 14px 20px;
-  border: 2px solid #E5E5E5;
-  border-radius: 4px;
-}
+/* Карточки отеля */
 
 .hotel-card {
   display: grid;
   grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 212px 1fr;
   gap: 16px 20px;
   padding: 20px;
   border: 1px solid #E6E6E6;
   border-radius: 4px;
+  transition: 0.7s;
+}
+
+.hotel-card:hover {
+  transform: scale(1.05);
 }
 
 .hotel-image {
@@ -849,6 +1147,19 @@ input, button, select, textarea {
   border-radius: 4px;
 }
 
+.star-raiting-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.star-raiting-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 6px;
+}
+
 .hotel-rating {
   margin: 0;
   font-size: 16px;
@@ -861,22 +1172,28 @@ input, button, select, textarea {
   border-radius: 4px;
 }
 
+/* Блок пагинации
+
+Общие настройки контейнера */
+
 .pagination-container {
   padding: 0 70px;
   margin-bottom: 60px;
 }
 
+/* Список элементов пагинации (ul) */
+
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
   padding: 40px 0 0;
   border-top: 1px solid #E6E6E6;
   list-style-type: none;
 }
 
-.pagination-item {
-  margin-right: 8px;
-}
+/* Элементы списка пагинации */
 
 .pagination-link {
   display: flex;
@@ -893,6 +1210,8 @@ input, button, select, textarea {
   border-radius: 4px;
 }
 
+/* Пропуск страниц в пагинации  */
+
 .pagination-number-skip {
   display: flex;
   width: 60px;
@@ -902,6 +1221,8 @@ input, button, select, textarea {
   align-items: center;
   justify-content: center;
 }
+
+/* Состояния пагинации и эффекты */
 
 .pagination-link-current .pagination-link {
   background-color: #F2F2F2;
@@ -925,15 +1246,19 @@ input, button, select, textarea {
   color: rgba(255, 255, 255, .3);
 }
 
+/* Внутренняя форма подписки на рассылку
+
+Настройки секции */
+
 .inner-mailing {
   text-align: center;
   padding: 96px 258px 104px;
 }
 
+/* Настройки заголовка и подзаголовка формы подписки на рассылку */
 
 .inner-mailing-title {
   margin: 0;
-  padding-bottom: 20px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -943,8 +1268,9 @@ input, button, select, textarea {
 
 .inner-mailing-subtitle {
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 54px;
   width: 475px;
-  padding-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
   color: #333333;
@@ -952,18 +1278,23 @@ input, button, select, textarea {
 
 /* footer */
 
+/* Общие настройки footer */
+
 .page-footer {
   display: flex;
-  padding: 40px 70px 30px;
+  padding: 45px 70px 35px;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Общий список элементов и элементы footer (ul)(li) */
 
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  max-width: 150px;
   list-style-type: none;
 }
 
@@ -972,6 +1303,8 @@ input, button, select, textarea {
   height: 40px;
 }
 
+/* Ссылки на соц. сети, вложенные в элементы списка footer */
+
 .social-apps-link {
   display: flex;
   width: 100%;
@@ -979,6 +1312,8 @@ input, button, select, textarea {
   align-items: center;
   justify-content: center;
 }
+
+/* Свойства и эффекты ссылок на соц. сети footer */
 
 .social-apps-link:hover svg path {
   fill: #68A2CA;
@@ -993,6 +1328,8 @@ input, button, select, textarea {
   opacity: .3;
 }
 
+/* Контакты footer */
+
 .contacts-phone {
   font-size: 40px;
   line-height: 40px;
@@ -1000,6 +1337,8 @@ input, button, select, textarea {
   align-self: center;
   text-decoration: none;
 }
+
+/* Свойства и эффекты контрактов footer */
 
 .contacts-phone:hover {
   color: #756157;
@@ -1014,9 +1353,13 @@ input, button, select, textarea {
   opacity: .3;
 }
 
+/* Логотип компании html Academy в footer */
+
 .html-academy-logo {
   width: 115px;
 }
+
+/* Свойства и эффекты логотипа компании html Academy в footer */
 
 .html-academy-logo:hover svg path {
   fill: #756157;
@@ -1029,4 +1372,324 @@ input, button, select, textarea {
 .html-academy-logo:active svg path {
   fill: #756157;
   opacity: .3;
+}
+
+
+/* Модальное окно */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #F2F2F2CC;
+  z-index: 2;
+}
+
+.modal-container-display {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  border-radius: 30px;
+  background-color: #ffffff;
+}
+
+.modal-booking {
+  width: 717px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 100%;
+  background-image: url("../images/action-icons/close-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus-visible {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+  border: none;
+}
+
+.modal-close-button:active {
+ background-color: #E6E6E6;
+ opacity: .3;
+}
+
+.modal-title {
+  margin: 0;
+  margin-bottom: 64px;
+  padding: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 247px 1fr;
+  gap: 23px 88px;
+}
+
+.field-group {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 440px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: capitalize;
+  grid-column: 1 / -1;
+}
+
+.check-in-date,
+.check-out-date {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.check-in-date:hover,
+.check-out-date:hover {
+  opacity: .7;
+}
+
+.check-in-date:focus-visible,
+.check-out-date:focus-visible {
+  opacity: .7;
+}
+
+.check-in-date:active,
+.check-out-date:active {
+  opacity: .3;
+}
+
+.calendar {
+  display: block;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.calendar:hover svg g {
+  fill: #000000;
+  opacity: 1;
+}
+
+.error {
+  grid-column: 2/3;
+  margin-top: 4px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #FF5757;
+  text-transform: none;
+}
+
+.text-free-date {
+  grid-column: 2/3;
+  margin-top: 4px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #333333;
+  text-transform: none;
+}
+
+.adults-wrapper,
+.children-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.adults-input-wrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.children-input-wrapper {
+  display: flex;
+  margin-left: 46px;
+}
+
+.adults-wrapper {
+  grid-column: 1 / 2;
+}
+
+.children-wrapper {
+  grid-column: 2 / 3;
+}
+
+.popup {
+  margin-left: 10px;
+  position: relative;
+}
+
+.popup-text {
+  display: none;
+  position: absolute;
+  padding: 15px 18px 18px 22px;
+  top: calc(100% + 15px);
+  width: 256px;
+  left: 50%;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #333333;
+  border-radius: 10px;
+  transform: translateX(-50%);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+}
+
+.popup-text::before {
+  position: absolute;
+  content:"";
+  background-image: url("../images/action-icons/triangle.svg");
+  width: 19px;
+  height: 9px;
+  top: -9px;
+  left: 118px;
+}
+
+.popup-button:hover + .popup-text {
+  display: block;
+}
+
+.popup-button {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  background: #83B3D3;
+  border: none;
+  background-image: url("../images/action-icons/info.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+}
+
+.adulst-counter,
+.children-counter {
+  margin: 0;
+  padding: 14px 0;
+  width: 31px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+
+.adulst-counter::-webkit-outer-spin-button,
+.adulst-counter::-webkit-inner-spin-button,
+.children-counter::-webkit-outer-spin-button,
+.children-counter::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.button-minus,
+.button-plus {
+  margin: 0;
+  padding: 14px 10px;
+  width: 40px;
+  border: none;
+  background-color: #F2F2F2;
+}
+
+.button-minus:hover svg path,
+.button-plus:hover svg path {
+  fill: #000000;
+  fill-opacity: 1;
+}
+
+.button-minus:focus-visible svg path,
+.button-plus:focus-visible svg path {
+  outline: 3px solid #82B3D3;
+  border: none;
+  fill: #000000;
+  fill-opacity: 1;
+}
+
+.button-minus:active svg path,
+.button-plus:active svg path {
+  fill: #000000;
+  fill-opacity: .2;
+}
+
+.button-pointer {
+  display: block;
+  cursor: pointer;
+}
+
+.button-minus {
+  border-radius: 4px 0 0 4px;
+}
+
+.button-plus {
+  border-radius: 0 4px 4px 0;
+}
+
+.check-in-date,
+.check-out-date {
+  margin: 0;
+  padding: 12px 70px 12px 20px;
+  width: 440px;
+  border: none;
+  border-radius: 4px;
+  background-color: #F2F2F2;
+}
+
+.modal-button-search {
+  display: block;
+  margin: 0;
+  margin-top: 25px;
+  padding: 18px 256px;
+  font-size: 20px;
+  line-height: 24px;
+  width: 577px;
+  border-radius: 10px;
+  background-color: #83B3D3;
+  grid-column: 1 / -1;
 }
