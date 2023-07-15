@@ -201,7 +201,7 @@ input, button, select, textarea {
 
 .email-field {
   background-color: #F2F2F2;
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
 }
 
 .email-field:hover {
@@ -1004,9 +1004,14 @@ input, button, select, textarea {
   width: 292px;
   font-size: 18px;
   line-height: 21px;
-  padding: 10px 16px;
+  padding: 12px 38px 12px 18px ;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
+  appearance: none;
+  background-image: url("../images/action-icons/arrow-down.svg");
+  background-position: right 20px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .select-control:hover {
