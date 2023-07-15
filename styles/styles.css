@@ -201,7 +201,7 @@ input, button, select, textarea {
 
 .email-field {
   background-color: #F2F2F2;
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
 }
 
 .email-field:hover {
