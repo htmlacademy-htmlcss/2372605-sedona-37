@@ -313,7 +313,7 @@ input, button, select, textarea {
  height: 20px;
 }
 
-.navigation-user-link:hover svg path {
+.navigation-user-link:hover path {
   opacity: .6;
 }
 
@@ -583,7 +583,7 @@ input, button, select, textarea {
   padding: 96px 258px 104px;
   background-color: #758a98;
   background-image: url("../images/main/subscribe-index.jpg");
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -853,6 +853,7 @@ input, button, select, textarea {
   text-align: left;
   background-color: #F2F2F2;
   border: none;
+  appearance: textfield;
 }
 
 .range-input:hover {
@@ -1011,6 +1012,7 @@ input, button, select, textarea {
   background-image: url("../images/action-icons/arrow-down.svg");
   background-position: right 20px center;
   background-repeat: no-repeat;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -1102,6 +1104,7 @@ input, button, select, textarea {
   border: 1px solid #E6E6E6;
   border-radius: 4px;
   transition: 0.7s;
+  will-change: transform;
 }
 
 .hotel-card:hover {
@@ -1320,15 +1323,15 @@ input, button, select, textarea {
 
 /* Свойства и эффекты ссылок на соц. сети footer */
 
-.social-apps-link:hover svg path {
+.social-apps-link:hover path {
   fill: #68A2CA;
 }
 
-.social-apps-link:focus svg path {
+.social-apps-link:focus path {
   fill: #68A2CA;
 }
 
-.social-apps-link:active svg path {
+.social-apps-link:active path {
   fill: #68A2CA;
   opacity: .3;
 }
@@ -1366,15 +1369,15 @@ input, button, select, textarea {
 
 /* Свойства и эффекты логотипа компании html Academy в footer */
 
-.html-academy-logo:hover svg path {
+.html-academy-logo:hover path {
   fill: #756157;
 }
 
-.html-academy-logo:focus svg path {
+.html-academy-logo:focus path {
   fill: #756157;
 }
 
-.html-academy-logo:active svg path {
+.html-academy-logo:active path {
   fill: #756157;
   opacity: .3;
 }
@@ -1612,7 +1615,7 @@ input, button, select, textarea {
   border-radius: 100%;
 }
 
-.adulst-counter,
+.adults-counter,
 .children-counter {
   margin: 0;
   padding: 14px 0;
@@ -1624,10 +1627,11 @@ input, button, select, textarea {
   border-radius: 0;
   background-color: #F2F2F2;
   text-align: center;
+  appearance: textfield;
 }
 
-.adulst-counter::-webkit-outer-spin-button,
-.adulst-counter::-webkit-inner-spin-button,
+.adults-counter::-webkit-outer-spin-button,
+.adults-counter::-webkit-inner-spin-button,
 .children-counter::-webkit-outer-spin-button,
 .children-counter::-webkit-inner-spin-button {
   appearance: none;
@@ -1641,24 +1645,25 @@ input, button, select, textarea {
   width: 40px;
   border: none;
   background-color: #F2F2F2;
+  outline: none;
 }
 
-.button-minus:hover svg path,
-.button-plus:hover svg path {
+.button-minus:hover path,
+.button-plus:hover path {
   fill: #000000;
   fill-opacity: 1;
 }
 
-.button-minus:focus-visible svg path,
-.button-plus:focus-visible svg path {
+.button-minus:focus-visible path,
+.button-plus:focus-visible path {
   outline: 3px solid #82B3D3;
   border: none;
   fill: #000000;
   fill-opacity: 1;
 }
 
-.button-minus:active svg path,
-.button-plus:active svg path {
+.button-minus:active path,
+.button-plus:active path {
   fill: #000000;
   fill-opacity: .2;
 }
