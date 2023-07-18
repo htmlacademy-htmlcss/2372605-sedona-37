@@ -1104,7 +1104,6 @@ input, button, select, textarea {
   border: 1px solid #E6E6E6;
   border-radius: 4px;
   transition: 0.7s;
-  will-change: transform;
 }
 
 .hotel-card:hover {
@@ -1176,7 +1175,7 @@ input, button, select, textarea {
   text-transform: uppercase;
   color: #333333;
   background-color: #f2f2f2;
-  padding: 8px 22px;
+  padding: 9px 22px 8px 23px;
   border-radius: 4px;
 }
 
